@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Getter @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Table(name = "fk_keeper")
+@Table(name = "tb_keeper")
 public class Keeper {
 
     @Id
