@@ -3,6 +3,7 @@ package com.project.teamfresh.global.security;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
@@ -34,6 +35,11 @@ public class SecurityConfiguration {
                 )
                 .authorizeHttpRequests(requests -> requests
                         .requestMatchers(CorsUtils::isPreFlightRequest).permitAll()
+
+                        // Carrier 서버
+                        .requestMatchers(HttpMethod.POST, "/carrier/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/driver/**").permitAll()
+
                         .anyRequest().denyAll()
                 );
 
