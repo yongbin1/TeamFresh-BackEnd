@@ -37,8 +37,12 @@ public class SecurityConfiguration {
                         .requestMatchers(CorsUtils::isPreFlightRequest).permitAll()
 
                         // Carrier 서버
-                        .requestMatchers(HttpMethod.POST, "/carrier/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/driver/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/carrier/**").permitAll() // 운송사 등록 API
+                        .requestMatchers(HttpMethod.POST, "/driver/**").permitAll() // 기사 등록 API
+
+                        // Customer 서버
+                        .requestMatchers(HttpMethod.POST, "/customer/**").permitAll() // 고객사 등록 API
+                        .requestMatchers(HttpMethod.POST, "/keeper/**").permitAll() // 담당자 등록 API
 
                         .anyRequest().denyAll()
                 );
