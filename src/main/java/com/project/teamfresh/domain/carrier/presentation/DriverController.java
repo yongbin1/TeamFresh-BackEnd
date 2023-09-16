@@ -17,7 +17,7 @@ public class DriverController {
 
     private final RegisterDriverService registerDriverService;
 
-    @PostMapping
+    @PostMapping("/register")
     @ResponseStatus(HttpStatus.CREATED)
     public void registerDriver(
             @RequestBody RegisterDriverRequest request

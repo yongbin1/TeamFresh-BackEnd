@@ -17,7 +17,7 @@ public class CarrierController {
 
     private final RegisterCarrierService registerCarrierService;
 
-    @PostMapping
+    @PostMapping("/register")
     @ResponseStatus(HttpStatus.CREATED)
     public void registerCarrier(
             @RequestBody RegisterCarrierRequest request

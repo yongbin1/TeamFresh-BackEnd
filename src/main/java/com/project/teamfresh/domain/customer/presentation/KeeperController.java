@@ -17,7 +17,7 @@ public class KeeperController {
 
     private final RegisterKeeperService registerKeeperService;
 
-    @PostMapping
+    @PostMapping("/register")
     @ResponseStatus(HttpStatus.CREATED)
     public void registerKeeper(
             @RequestBody RegisterKeeperRequest request

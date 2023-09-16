@@ -17,7 +17,7 @@ public class CustomerController {
 
     private final RegisterCustomerService registerCustomerService;
 
-    @PostMapping
+    @PostMapping("/register")
     @ResponseStatus(HttpStatus.CREATED)
     public void registerCustomer(
             @RequestBody RegisterCustomerRequest request
