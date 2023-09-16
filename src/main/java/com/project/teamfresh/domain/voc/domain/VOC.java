@@ -1,5 +1,6 @@
 package com.project.teamfresh.domain.voc.domain;
 
+import com.project.teamfresh.domain.compensation.domain.Compensation;
 import com.project.teamfresh.domain.penalty.domain.Penalty;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -29,6 +30,17 @@ public class VOC {
 
     @OneToOne(mappedBy = "voc", cascade = CascadeType.ALL, orphanRemoval = true)
     private Penalty penalty; // 패널티 정보
+    public void setPenalty(Penalty penalty) {
+        penalty.setVoc(this);
+        this.penalty = penalty;
+    }
+
+    @OneToOne(mappedBy = "voc", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Compensation compensation;
+    public void setCompensation(Compensation compensation) {
+        compensation.setVoc(this);
+        this.compensation = compensation;
+    }
 
     @Builder
     public VOC(String imputationParty, String imputationContent, Boolean driverCheck, Boolean objection, Penalty penalty) {

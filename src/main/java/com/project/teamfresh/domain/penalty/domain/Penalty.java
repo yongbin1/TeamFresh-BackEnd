@@ -27,8 +27,12 @@ public class Penalty {
 
     private String content; // 패널티 정보
 
-    @OneToOne(mappedBy = "penalty", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne
+    @JoinColumn(name = "fk_voc")
     private VOC voc; // voc 정보
+    public void setVoc(VOC voc) {
+        this.voc = voc;
+    }
 
     @ManyToOne
     @JoinColumn(name = "fk_driver")
@@ -38,8 +42,7 @@ public class Penalty {
     }
 
     @Builder
-    public Penalty(String content, VOC voc) {
+    public Penalty(String content) {
         this.content = content;
-        this.voc = voc;
     }
 }

@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
@@ -25,13 +26,16 @@ public class Compensation {
     private String content; // 배상 정보
     private Integer price; // 배상 금액
 
-    @OneToOne(mappedBy = "voc", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne
+    @JoinColumn(name = "fk_voc")
     private VOC voc; // voc 정보
+    public void setVoc(VOC voc) {
+        this.voc = voc;
+    }
 
     @Builder
-    public Compensation(String content, Integer price, VOC voc) {
+    public Compensation(String content, Integer price) {
         this.content = content;
         this.price = price;
-        this.voc = voc;
     }
 }
