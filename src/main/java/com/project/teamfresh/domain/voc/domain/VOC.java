@@ -43,11 +43,10 @@ public class VOC {
     }
 
     @Builder
-    public VOC(String imputationParty, String imputationContent, Boolean driverCheck, Boolean objection, Penalty penalty) {
+    public VOC(String imputationParty, String imputationContent, Boolean driverCheck, Boolean objection) {
         this.imputationParty = imputationParty;
         this.imputationContent = imputationContent;
         this.driverCheck = driverCheck;
         this.objection = objection;
-        this.penalty = penalty;
     }
 }
