@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -20,6 +22,7 @@ import java.util.List;
 public class Customer extends BaseTime {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // 고유 아이디
 
     private String name; // 고객사명
