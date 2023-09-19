@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -30,7 +31,7 @@ public class GetCompensationListService {
                         return CompensationResponse.of(item, CompensationVocResponse.of(item.getVoc(), PenaltyResponse.of(item.getPenalty())));
                     }
                 })
-                .toList();
+                .collect(Collectors.toList());
 
         return CompensationListResponse.builder()
                 .list(list)

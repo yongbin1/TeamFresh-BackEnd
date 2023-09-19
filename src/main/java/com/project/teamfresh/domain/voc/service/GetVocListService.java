@@ -29,7 +29,7 @@ public class GetVocListService {
 
         List<VocResponse> list = vocList.stream()
                 .map(item -> {
-                    if (item.getCompensation() == null || item.getImputationParty().equals(ImputationParty.CUSTOMER)) {
+                    if (item.getCompensation() == null) {
                         return VocResponse.of(item, null, null);
                     } else if(item.getCompensation().getPenalty() == null) {
                         return VocResponse.of(item, null, VocCompensationResponse.of(item.getCompensation()));
@@ -38,7 +38,7 @@ public class GetVocListService {
                                 VocCompensationResponse.of(item.getCompensation()));
                     }
                 })
-                .toList();
+                .collect(Collectors.toList());
 
         return VocListResponse.builder()
                 .list(list)
