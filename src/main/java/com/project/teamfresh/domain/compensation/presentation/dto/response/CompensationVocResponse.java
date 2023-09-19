@@ -2,6 +2,7 @@ package com.project.teamfresh.domain.compensation.presentation.dto.response;
 
 import com.project.teamfresh.domain.penalty.presentation.dto.response.PenaltyResponse;
 import com.project.teamfresh.domain.voc.domain.VOC;
+import com.project.teamfresh.domain.voc.domain.enums.ImputationParty;
 import com.project.teamfresh.domain.voc.presentation.dto.response.VocCompensationResponse;
 import com.project.teamfresh.domain.voc.presentation.dto.response.VocResponse;
 import lombok.AllArgsConstructor;
@@ -12,7 +13,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class CompensationVocResponse {
 
-    private String imputationParty;
+    private ImputationParty imputationParty;
     private String imputationContent;
     private Boolean driverCheck;
     private Boolean objection;
