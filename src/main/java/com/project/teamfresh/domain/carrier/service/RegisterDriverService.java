@@ -19,7 +19,7 @@ public class RegisterDriverService {
 
     @Transactional
     public void execute(RegisterDriverRequest request) {
-        driverFacade.existsDriver(request.getCarrierId());
+        driverFacade.existsDriver(request.getDriverId());
 
         Carrier carrier = carrierFacade.getCarrier(request.getCarrierId());
         Driver driver = request.toEntity();

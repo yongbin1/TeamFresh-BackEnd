@@ -18,7 +18,7 @@ public class RegisterKeeperService {
 
     @Transactional
     public void execute(RegisterKeeperRequest request) {
-        keeperFacade.existsKeeper(request.getCustomerId());
+        keeperFacade.existsKeeper(request.getKeeperId());
 
         Customer customer = customerFacade.getCustomer(request.getCustomerId());
         Keeper keeper = request.toEntity();
