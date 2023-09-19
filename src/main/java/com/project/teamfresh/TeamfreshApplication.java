@@ -13,5 +13,4 @@ public class TeamfreshApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TeamfreshApplication.class, args);
 	}
-
 }
