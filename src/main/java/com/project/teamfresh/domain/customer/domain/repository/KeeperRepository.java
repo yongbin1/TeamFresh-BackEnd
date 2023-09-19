@@ -8,5 +8,6 @@ import java.util.Optional;
 public interface KeeperRepository extends JpaRepository<Keeper, Long> {
 
     Optional<Keeper> findByKeeperId(String keeperId);
+    Boolean existsByKeeperId(String keeperId);
 
 }

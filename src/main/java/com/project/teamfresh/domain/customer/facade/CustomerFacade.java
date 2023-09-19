@@ -2,6 +2,7 @@ package com.project.teamfresh.domain.customer.facade;
 
 import com.project.teamfresh.domain.customer.domain.Customer;
 import com.project.teamfresh.domain.customer.domain.repository.CustomerRepository;
+import com.project.teamfresh.domain.customer.exception.AlreadyCustomerIdException;
 import com.project.teamfresh.domain.customer.exception.CustomerNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -17,6 +18,12 @@ public class CustomerFacade {
     public Customer getCustomer(String id) {
         return customerRepository.findByCustomerId(id)
                 .orElseThrow(() -> CustomerNotFoundException.EXCEPTION);
+    }
+
+    @Transactional(readOnly = true)
+    public void existsCustomer(String id) {
+        if (customerRepository.existsByCustomerId(id))
+            throw AlreadyCustomerIdException.EXCEPTION;
     }
 
 }

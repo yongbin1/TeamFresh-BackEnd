@@ -9,7 +9,8 @@ import org.springframework.http.HttpStatus;
 @RequiredArgsConstructor
 public enum DriverErrorProperty implements ErrorProperty {
 
-    DRIVER_NOT_FOUND(HttpStatus.NOT_FOUND, "기사를 찾을 수 없습니다.");
+    DRIVER_NOT_FOUND(HttpStatus.NOT_FOUND, "기사를 찾을 수 없습니다."),
+    ALREADY_DRIVER_ID(HttpStatus.CONFLICT, "기사 ID가 이미 사용 중 입니다.");
 
     private final HttpStatus status;
     private final String message;

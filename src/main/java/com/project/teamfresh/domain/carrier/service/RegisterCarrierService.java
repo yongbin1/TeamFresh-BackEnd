@@ -11,10 +11,12 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class RegisterCarrierService {
 
+    private final CarrierFacade carrierFacade;
     private final CarrierRepository carrierRepository;
 
     @Transactional
     public void execute(RegisterCarrierRequest request) {
+        carrierFacade.existsCarrier(request.getCarrierId());
         carrierRepository.save(request.toEntity());
     }
 

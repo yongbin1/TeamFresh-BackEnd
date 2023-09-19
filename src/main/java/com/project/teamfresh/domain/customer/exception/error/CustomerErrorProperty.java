@@ -9,7 +9,8 @@ import org.springframework.http.HttpStatus;
 @RequiredArgsConstructor
 public enum CustomerErrorProperty implements ErrorProperty {
 
-    CUSTOMER_NOT_FOUND(HttpStatus.NOT_FOUND, "고객사를 찾을 수 없습니다.");
+    CUSTOMER_NOT_FOUND(HttpStatus.NOT_FOUND, "고객사를 찾을 수 없습니다."),
+    ALREADY_CUSTOMER_ID(HttpStatus.CONFLICT, "고객사 ID가 이미 사용 중입니다.");
 
     private final HttpStatus status;
     private final String message;

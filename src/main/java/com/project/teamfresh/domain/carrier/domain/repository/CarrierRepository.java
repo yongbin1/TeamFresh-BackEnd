@@ -8,5 +8,6 @@ import java.util.Optional;
 public interface CarrierRepository extends JpaRepository<Carrier, Long> {
 
     Optional<Carrier> findByCarrierId(String carrierId);
+    Boolean existsByCarrierId(String carrierId);
 
 }
