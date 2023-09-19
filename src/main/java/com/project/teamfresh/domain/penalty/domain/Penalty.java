@@ -1,6 +1,7 @@
 package com.project.teamfresh.domain.penalty.domain;
 
 import com.project.teamfresh.domain.carrier.domain.Driver;
+import com.project.teamfresh.domain.compensation.domain.Compensation;
 import com.project.teamfresh.domain.voc.domain.VOC;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -28,10 +29,10 @@ public class Penalty {
     private String content; // 패널티 정보
 
     @OneToOne
-    @JoinColumn(name = "fk_voc")
-    private VOC voc; // voc 정보
-    public void setVoc(VOC voc) {
-        this.voc = voc;
+    @JoinColumn(name = "fk_compensation")
+    private Compensation compensation; // voc 정보
+    public void setCompensation(Compensation compensation) {
+        this.compensation = compensation;
     }
 
     @ManyToOne

@@ -10,13 +10,11 @@ import lombok.Getter;
 @AllArgsConstructor
 public class PenaltyResponse {
 
-    private Long idx;
     private String content;
     private DriverResponse driver;
 
     public static PenaltyResponse of(Penalty penalty) {
         return PenaltyResponse.builder()
-                .idx(penalty.getIdx())
                 .content(penalty.getContent())
                 .driver(DriverResponse.of(penalty.getDriver()))
                 .build();
