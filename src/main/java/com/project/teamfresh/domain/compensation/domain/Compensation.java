@@ -1,5 +1,6 @@
 package com.project.teamfresh.domain.compensation.domain;
 
+import com.project.teamfresh.domain.penalty.domain.Penalty;
 import com.project.teamfresh.domain.voc.domain.VOC;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -31,6 +32,13 @@ public class Compensation {
     private VOC voc; // voc 정보
     public void setVoc(VOC voc) {
         this.voc = voc;
+    }
+
+    @OneToOne(mappedBy = "compensation", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Penalty penalty;
+    public void setPenalty(Penalty penalty) {
+        penalty.setCompensation(this);
+        this.penalty = penalty;
     }
 
     @Builder
