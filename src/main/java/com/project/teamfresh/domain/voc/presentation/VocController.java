@@ -4,8 +4,6 @@ import com.project.teamfresh.domain.voc.presentation.dto.request.CreateVocReques
 import com.project.teamfresh.domain.voc.presentation.dto.response.VocListResponse;
 import com.project.teamfresh.domain.voc.service.CreateVocService;
 import com.project.teamfresh.domain.voc.service.GetVocListService;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(value = "/voc")
-@Tag(name = "VOC 서버")
 public class VocController {
 
     private final CreateVocService createVocService;
@@ -26,7 +23,6 @@ public class VocController {
 
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
-    @Operation(summary = "VOC 정보 등록 API")
     public void createVoc(
             @RequestBody CreateVocRequest request
     ) {
@@ -34,7 +30,6 @@ public class VocController {
     }
 
     @GetMapping("/list")
-    @Operation(summary = "VOC 목록 API")
     public VocListResponse getVocList() {
         return getVocListService.execute();
     }

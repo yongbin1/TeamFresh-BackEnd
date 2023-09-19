@@ -13,7 +13,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class CompensationVocResponse {
 
-    private ImputationParty imputationParty;
+    private String imputationParty;
     private String imputationContent;
     private Boolean driverCheck;
     private Boolean objection;
@@ -21,7 +21,7 @@ public class CompensationVocResponse {
 
     public static CompensationVocResponse of(VOC voc, PenaltyResponse penalty) {
         return CompensationVocResponse.builder()
-                .imputationParty(voc.getImputationParty())
+                .imputationParty(voc.getImputationParty().getParty())
                 .imputationContent(voc.getImputationContent())
                 .driverCheck(voc.getDriverCheck())
                 .objection(voc.getObjection())

@@ -1,5 +1,6 @@
 package com.project.teamfresh.global.security;
 
+import com.project.teamfresh.global.security.logger.LogFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -7,11 +8,13 @@ import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configurers.CsrfConfigurer;
 import org.springframework.security.config.annotation.web.configurers.FormLoginConfigurer;
 import org.springframework.security.config.annotation.web.configurers.HttpBasicConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsUtils;
 
 @Configuration
@@ -37,8 +40,6 @@ public class SecurityConfiguration {
                 )
                 .authorizeHttpRequests(requests -> requests
                         .requestMatchers(CorsUtils::isPreFlightRequest).permitAll()
-                        .requestMatchers("/swagger-ui/**", "/configuration/**", "/swagger-resources/**", "/v3/api-docs/**", "/webjars/**",
-                                "/webjars/springfox-swagger-ui/*.{js,css}", "/bus/v3/api-docs/**").permitAll()
 
                         // Carrier 서버
                         .requestMatchers(HttpMethod.POST, "/carrier/**").permitAll() // 운송사 등록 API
@@ -64,8 +65,10 @@ public class SecurityConfiguration {
                         .requestMatchers(HttpMethod.POST, "/penalty/**").permitAll() // 패널티 등록 API
 
                         .anyRequest().denyAll()
-                );
+                )
+                .addFilterBefore(new LogFilter(), UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
+
 }

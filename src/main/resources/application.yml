@@ -31,6 +31,10 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
 
+logging:
+  level:
+    root: INFO
+
 server:
   port: 8085
   forward-headers-strategy: framework

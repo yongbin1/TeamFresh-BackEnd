@@ -14,7 +14,7 @@ import lombok.Getter;
 public class VocResponse {
 
     private Long idx;
-    private ImputationParty imputationParty;
+    private String imputationParty;
     private String imputationContent;
     private Boolean driverCheck;
     private Boolean objection;
@@ -24,7 +24,7 @@ public class VocResponse {
     public static VocResponse of(VOC voc, PenaltyResponse penalty, VocCompensationResponse compensation) {
         return VocResponse.builder()
                 .idx(voc.getIdx())
-                .imputationParty(voc.getImputationParty())
+                .imputationParty(voc.getImputationParty().getParty())
                 .imputationContent(voc.getImputationContent())
                 .driverCheck(voc.getDriverCheck())
                 .objection(voc.getObjection())

@@ -7,8 +7,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public enum ImputationParty {
 
-    CUSTOMER("CUSTOMER"),
-    CARRIER("CARRIER");
+    CUSTOMER("고객사"),
+    CARRIER("운송사");
 
     private final String party;
 
