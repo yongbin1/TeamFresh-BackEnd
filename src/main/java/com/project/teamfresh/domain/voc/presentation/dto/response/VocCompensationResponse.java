@@ -1,4 +1,4 @@
-package com.project.teamfresh.domain.compensation.presentation.dto.response;
+package com.project.teamfresh.domain.voc.presentation.dto.response;
 
 import com.project.teamfresh.domain.compensation.domain.Compensation;
 import lombok.AllArgsConstructor;
@@ -7,15 +7,13 @@ import lombok.Getter;
 
 @Getter @Builder
 @AllArgsConstructor
-public class CompensationResponse {
+public class VocCompensationResponse {
 
-    private Long idx;
     private String content;
     private Integer price;
 
-    public static CompensationResponse of(Compensation compensation) {
-        return CompensationResponse.builder()
-                .idx(compensation.getIdx())
+    public static VocCompensationResponse of(Compensation compensation) {
+        return VocCompensationResponse.builder()
                 .content(compensation.getContent())
                 .price(compensation.getPrice())
                 .build();

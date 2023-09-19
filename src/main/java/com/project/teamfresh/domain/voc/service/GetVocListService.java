@@ -1,7 +1,12 @@
 package com.project.teamfresh.domain.voc.service;
 
+import com.project.teamfresh.domain.compensation.domain.Compensation;
+import com.project.teamfresh.domain.compensation.exception.CompensationNotFoundException;
+import com.project.teamfresh.domain.penalty.exception.PenaltyNotFoundException;
+import com.project.teamfresh.domain.penalty.presentation.dto.response.PenaltyResponse;
 import com.project.teamfresh.domain.voc.domain.VOC;
 import com.project.teamfresh.domain.voc.facade.VocFacade;
+import com.project.teamfresh.domain.voc.presentation.dto.response.VocCompensationResponse;
 import com.project.teamfresh.domain.voc.presentation.dto.response.VocListResponse;
 import com.project.teamfresh.domain.voc.presentation.dto.response.VocResponse;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +27,16 @@ public class GetVocListService {
         List<VOC> vocList = vocFacade.getAllVoc();
 
         List<VocResponse> list = vocList.stream()
-                .map(VocResponse::of)
+                .map(item -> {
+                    if (item.getCompensation() == null) {
+                        return VocResponse.of(item, null, null);
+                    } else if(item.getCompensation().getPenalty() == null) {
+                        return VocResponse.of(item, null, VocCompensationResponse.of(item.getCompensation()));
+                    } else {
+                        return VocResponse.of(item, PenaltyResponse.of(item.getCompensation().getPenalty()),
+                                VocCompensationResponse.of(item.getCompensation()));
+                    }
+                })
                 .toList();
 
         return VocListResponse.builder()

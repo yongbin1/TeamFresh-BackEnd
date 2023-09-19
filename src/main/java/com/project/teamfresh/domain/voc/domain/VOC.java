@@ -29,13 +29,6 @@ public class VOC {
     private Boolean objection; // 이의 제기 여부
 
     @OneToOne(mappedBy = "voc", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Penalty penalty; // 패널티 정보
-    public void setPenalty(Penalty penalty) {
-        penalty.setVoc(this);
-        this.penalty = penalty;
-    }
-
-    @OneToOne(mappedBy = "voc", cascade = CascadeType.ALL, orphanRemoval = true)
     private Compensation compensation;
     public void setCompensation(Compensation compensation) {
         compensation.setVoc(this);
