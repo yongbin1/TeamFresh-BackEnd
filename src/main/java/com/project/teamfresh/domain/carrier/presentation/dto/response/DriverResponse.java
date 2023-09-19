@@ -10,12 +10,14 @@ import lombok.Getter;
 public class DriverResponse {
 
     private Long id;
+    private String driverId;
     private String name;
     private String number;
 
     public static DriverResponse of(Driver driver) {
         return DriverResponse.builder()
                 .id(driver.getId())
+                .driverId(driver.getDriverId())
                 .name(driver.getName())
                 .number(driver.getNumber())
                 .build();

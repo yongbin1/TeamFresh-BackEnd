@@ -24,6 +24,7 @@ public class Carrier {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // 고유 아이디
 
+    private String carrierId; // 운송사 아이디
     private String name; // 운송사명
     private String number; // 운송사 번호
 
@@ -35,7 +36,8 @@ public class Carrier {
     }
 
     @Builder
-    public Carrier(String name, String number) {
+    public Carrier(String carrierId, String name, String number) {
+        this.carrierId = carrierId;
         this.name = name;
         this.number = number;
         this.driverList = new ArrayList<>();

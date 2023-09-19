@@ -9,11 +9,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class RegisterCarrierRequest {
 
+    private String carrierId;
     private String name;
     private String number;
 
     public Carrier toEntity() {
         return Carrier.builder()
+                .carrierId(this.carrierId)
                 .name(this.name)
                 .number(this.number)
                 .build();

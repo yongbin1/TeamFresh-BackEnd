@@ -9,6 +9,7 @@ import lombok.Getter;
 public class CarrierResponse {
 
     private Long id;
+    private String carrierId;
     private String name;
     private String number;
 

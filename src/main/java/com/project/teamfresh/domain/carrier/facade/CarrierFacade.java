@@ -14,8 +14,8 @@ public class CarrierFacade {
     private final CarrierRepository carrierRepository;
 
     @Transactional(readOnly = true)
-    public Carrier getCarrier(Long id) {
-        return carrierRepository.findById(id)
+    public Carrier getCarrier(String carrierId) {
+        return carrierRepository.findByCarrierId(carrierId)
                 .orElseThrow(() -> CarrierNotFoundException.EXCEPTION);
     }
 

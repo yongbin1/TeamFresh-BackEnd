@@ -14,8 +14,8 @@ public class DriverFacade {
     private final DriverRepository driverRepository;
 
     @Transactional(readOnly = true)
-    public Driver getDriver(Long id) {
-        return driverRepository.findById(id)
+    public Driver getDriver(String driverId) {
+        return driverRepository.findByDriverId(driverId)
                 .orElseThrow(() -> DriverNotFoundException.EXCEPTION);
     }
 

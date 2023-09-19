@@ -8,12 +8,14 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class RegisterDriverRequest {
 
-    private Long carrierId;
+    private String carrierId;
+    private String driverId;
     private String name;
     private String number;
 
     public Driver toEntity() {
         return Driver.builder()
+                .driverId(this.driverId)
                 .name(this.name)
                 .number(this.number)
                 .build();

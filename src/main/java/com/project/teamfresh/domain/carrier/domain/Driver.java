@@ -27,6 +27,7 @@ public class Driver {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // 고유 아이디
 
+    private String driverId;
     private String name; // 기사명
     private String number; // 기사 번호
 
@@ -45,7 +46,8 @@ public class Driver {
     }
 
     @Builder
-    public Driver(String name, String number) {
+    public Driver(String driverId, String name, String number) {
+        this.driverId = driverId;
         this.name = name;
         this.number = number;
         this.penaltyList = new ArrayList<>();
