@@ -1,7 +1,9 @@
 package com.project.teamfresh.domain.carrier.presentation;
 
+import com.project.teamfresh.domain.carrier.presentation.dto.request.DriverCheckPenaltyRequest;
 import com.project.teamfresh.domain.carrier.presentation.dto.request.RegisterDriverRequest;
 import com.project.teamfresh.domain.carrier.presentation.dto.response.DriverPenaltyListResponse;
+import com.project.teamfresh.domain.carrier.service.DriverCheckPenaltyService;
 import com.project.teamfresh.domain.carrier.service.GetDriverPenaltyListService;
 import com.project.teamfresh.domain.carrier.service.RegisterDriverService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -9,6 +11,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +27,7 @@ public class DriverController {
 
     private final RegisterDriverService registerDriverService;
     private final GetDriverPenaltyListService getDriverPenaltyListService;
+    private final DriverCheckPenaltyService driverCheckPenaltyService;
 
     @PostMapping("/register")
     @ResponseStatus(HttpStatus.CREATED)
@@ -40,6 +44,15 @@ public class DriverController {
             @RequestParam("driver_id") String driverId
     ) {
         return getDriverPenaltyListService.execute(driverId);
+    }
+
+    @PatchMapping("/penalty/check")
+    @Operation(summary = "패널티 확인 및 이의 제기 여부 확인")
+    public void checkPenalty(
+            @RequestParam("driver_id") String driverId,
+            @RequestBody DriverCheckPenaltyRequest request
+    ) {
+        driverCheckPenaltyService.execute(driverId, request);
     }
 
 }

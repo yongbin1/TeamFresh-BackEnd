@@ -31,7 +31,13 @@ public class VOC extends BaseTime {
     private ImputationParty imputationParty; // 귀책 당사자
     private String imputationContent; // 귀책 내용
     private Boolean driverCheck; // 기사 확인 여부
+    public void checkDriver() {
+        this.driverCheck = true;
+    }
     private Boolean objection; // 이의 제기 여부
+    public void checkObjection() {
+        this.objection = true;
+    }
 
     @OneToOne(mappedBy = "voc", cascade = CascadeType.ALL, orphanRemoval = true)
     private Compensation compensation;

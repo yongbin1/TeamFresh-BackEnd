@@ -14,12 +14,14 @@ public class DriverPenaltyResponse {
 
     private String content;
     private Boolean check;
+    private Boolean objection;
     private DriverCompensationResponse compensation;
 
     public static DriverPenaltyResponse of(Penalty penalty) {
         return DriverPenaltyResponse.builder()
                 .content(penalty.getContent())
                 .check(penalty.getCompensation().getVoc().getDriverCheck())
+                .objection(penalty.getCompensation().getVoc().getObjection())
                 .compensation(DriverCompensationResponse.of(penalty.getCompensation()))
                 .build();
     }
