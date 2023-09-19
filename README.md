@@ -21,36 +21,35 @@ http://ec2-43-202-153-230.ap-northeast-2.compute.amazonaws.com:8085/swagger-ui/i
 ---
 
 ### 클래스 다이어그램
-![teamfresh](https://github.com/yongbin1/TeamFresh-BackEnd/assets/81136764/ca8a3eb6-0aab-4322-a35b-945beb1dcdc8)
-
+![팀프레시_클래스다이어그램](https://github.com/yongbin1/TeamFresh-BackEnd/assets/81136764/44ac0711-de47-4356-9b1c-eb93bb16eedf)
 
 ---
 
 ### 데이터베이스 스키마 정보
-![TeamFresh (1)](https://github.com/yongbin1/TeamFresh-BackEnd/assets/81136764/3c9762bf-b23b-4150-aac0-f62bcf0b79f0)
+![팀프레시_ERD](https://github.com/yongbin1/TeamFresh-BackEnd/assets/81136764/3933f0eb-4787-4b75-9c4b-3916e58b20aa)
 
 ##### 전체 테이블 목록
-<img width="182" alt="스크린샷 2023-09-19 오후 12 23 38" src="https://github.com/yongbin1/TeamFresh-BackEnd/assets/81136764/ea98725f-181d-4be0-9993-521012789672">
+<img width="186" alt="테이블 목록" src="https://github.com/yongbin1/TeamFresh-BackEnd/assets/81136764/f1906a94-d449-4e12-b718-86eb30cdadda">
 
 ##### VOC 테이블 (tb_voc)
-<img width="560" alt="스크린샷 2023-09-20 오전 12 11 12" src="https://github.com/yongbin1/TeamFresh-BackEnd/assets/81136764/a1156d65-1e15-4bd0-8987-304ea7d5477f">
+<img width="560" alt="VOC 테이블(tb_voc)" src="https://github.com/yongbin1/TeamFresh-BackEnd/assets/81136764/4002e3c8-8239-4b6f-bb5d-72e0273629e4">
 
 ##### 배상정보 테이블 (tb_compensation)
-<img width="558" alt="스크린샷 2023-09-20 오전 12 11 23" src="https://github.com/yongbin1/TeamFresh-BackEnd/assets/81136764/1733bd6e-63fb-4d22-9c44-8ca4c7ffa8ca">
+<img width="558" alt="배상정보 테이블(tb_compensation)" src="https://github.com/yongbin1/TeamFresh-BackEnd/assets/81136764/ebebeb2b-c9be-49f1-b710-ec91e9c4afaa">
 
 ##### 패널티 테이블 (tb_penalty)
-<img width="558" alt="스크린샷 2023-09-20 오전 12 11 33" src="https://github.com/yongbin1/TeamFresh-BackEnd/assets/81136764/b07764fb-dd8c-4412-964a-3f3da414d7f2">
+<img width="558" alt="패널티 테이블(tb_penalty)" src="https://github.com/yongbin1/TeamFresh-BackEnd/assets/81136764/21139b8b-eddf-4ccd-8768-8ea66456bfde">
 
 ##### 운송사 테이블 (tb_carrier)
-<img width="568" alt="스크린샷 2023-09-20 오전 12 10 51" src="https://github.com/yongbin1/TeamFresh-BackEnd/assets/81136764/bf8bceea-226c-4c52-85a1-3545e69a88be">
+<img width="568" alt="운송사 테이블(tb_carrier)" src="https://github.com/yongbin1/TeamFresh-BackEnd/assets/81136764/0c817524-40d8-4b0a-9dba-95d76f5d3325">
 
 ##### 기사 테이블 (tb_driver)
-<img width="570" alt="스크린샷 2023-09-20 오전 12 11 02" src="https://github.com/yongbin1/TeamFresh-BackEnd/assets/81136764/e2a21b85-e67b-48b6-a84d-deb29673b059">
+<img width="570" alt="기사 테이블(tb_driver)" src="https://github.com/yongbin1/TeamFresh-BackEnd/assets/81136764/99fd1608-0199-4d77-b48e-31396a83383d">
 
 ##### 고객사 테이블 (tb_customer)
-<img width="570" alt="스크린샷 2023-09-20 오전 12 10 28" src="https://github.com/yongbin1/TeamFresh-BackEnd/assets/81136764/ffd56b12-69bf-48f2-ba4e-e3874ba0029c">
+<img width="570" alt="고객사 테이블(tb_customer)" src="https://github.com/yongbin1/TeamFresh-BackEnd/assets/81136764/71be063a-456b-4f8d-96a4-e08694f8f5ba">
 
 ##### 담당자 테이블 (tb_keeper)
-<img width="566" alt="스크린샷 2023-09-20 오전 12 10 39" src="https://github.com/yongbin1/TeamFresh-BackEnd/assets/81136764/5141ef32-e718-4901-ac06-702c1e96dc53">
+<img width="566" alt="담당자 테이블(tb_keeper)" src="https://github.com/yongbin1/TeamFresh-BackEnd/assets/81136764/2f59885e-7d36-4955-a618-d803ff358a49">
 
 ---
