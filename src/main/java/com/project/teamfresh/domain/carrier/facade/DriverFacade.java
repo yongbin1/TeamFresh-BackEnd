@@ -3,9 +3,12 @@ package com.project.teamfresh.domain.carrier.facade;
 import com.project.teamfresh.domain.carrier.domain.Driver;
 import com.project.teamfresh.domain.carrier.domain.repository.DriverRepository;
 import com.project.teamfresh.domain.carrier.exception.DriverNotFoundException;
+import com.project.teamfresh.domain.penalty.domain.Penalty;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Component
 @RequiredArgsConstructor
