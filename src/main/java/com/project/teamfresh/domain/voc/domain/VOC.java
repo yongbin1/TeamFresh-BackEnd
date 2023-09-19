@@ -2,8 +2,11 @@ package com.project.teamfresh.domain.voc.domain;
 
 import com.project.teamfresh.domain.compensation.domain.Compensation;
 import com.project.teamfresh.domain.penalty.domain.Penalty;
+import com.project.teamfresh.domain.voc.domain.enums.ImputationParty;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -23,7 +26,8 @@ public class VOC {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idx; // 인덱스
 
-    private String imputationParty; // 귀책 당사자
+    @Enumerated(EnumType.STRING)
+    private ImputationParty imputationParty; // 귀책 당사자
     private String imputationContent; // 귀책 내용
     private Boolean driverCheck; // 기사 확인 여부
     private Boolean objection; // 이의 제기 여부
@@ -36,7 +40,7 @@ public class VOC {
     }
 
     @Builder
-    public VOC(String imputationParty, String imputationContent, Boolean driverCheck, Boolean objection) {
+    public VOC(ImputationParty imputationParty, String imputationContent, Boolean driverCheck, Boolean objection) {
         this.imputationParty = imputationParty;
         this.imputationContent = imputationContent;
         this.driverCheck = driverCheck;

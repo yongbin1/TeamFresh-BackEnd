@@ -4,6 +4,7 @@ import com.project.teamfresh.domain.compensation.domain.Compensation;
 import com.project.teamfresh.domain.penalty.domain.Penalty;
 import com.project.teamfresh.domain.penalty.presentation.dto.response.PenaltyResponse;
 import com.project.teamfresh.domain.voc.domain.VOC;
+import com.project.teamfresh.domain.voc.domain.enums.ImputationParty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,7 +14,7 @@ import lombok.Getter;
 public class VocResponse {
 
     private Long idx;
-    private String imputationParty;
+    private ImputationParty imputationParty;
     private String imputationContent;
     private Boolean driverCheck;
     private Boolean objection;

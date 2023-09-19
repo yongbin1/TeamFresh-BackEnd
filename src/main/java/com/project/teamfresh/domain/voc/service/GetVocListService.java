@@ -5,6 +5,7 @@ import com.project.teamfresh.domain.compensation.exception.CompensationNotFoundE
 import com.project.teamfresh.domain.penalty.exception.PenaltyNotFoundException;
 import com.project.teamfresh.domain.penalty.presentation.dto.response.PenaltyResponse;
 import com.project.teamfresh.domain.voc.domain.VOC;
+import com.project.teamfresh.domain.voc.domain.enums.ImputationParty;
 import com.project.teamfresh.domain.voc.facade.VocFacade;
 import com.project.teamfresh.domain.voc.presentation.dto.response.VocCompensationResponse;
 import com.project.teamfresh.domain.voc.presentation.dto.response.VocListResponse;
@@ -28,7 +29,7 @@ public class GetVocListService {
 
         List<VocResponse> list = vocList.stream()
                 .map(item -> {
-                    if (item.getCompensation() == null) {
+                    if (item.getCompensation() == null || item.getImputationParty().equals(ImputationParty.CUSTOMER)) {
                         return VocResponse.of(item, null, null);
                     } else if(item.getCompensation().getPenalty() == null) {
                         return VocResponse.of(item, null, VocCompensationResponse.of(item.getCompensation()));

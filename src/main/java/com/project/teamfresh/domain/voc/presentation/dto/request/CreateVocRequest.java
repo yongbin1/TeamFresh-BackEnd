@@ -1,6 +1,7 @@
 package com.project.teamfresh.domain.voc.presentation.dto.request;
 
 import com.project.teamfresh.domain.voc.domain.VOC;
+import com.project.teamfresh.domain.voc.domain.enums.ImputationParty;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class CreateVocRequest {
 
-    private String imputationParty; // 귀책 당사자
+    private ImputationParty imputationParty; // 귀책 당사자
     private String imputationContent; // 귀책 내용
 
     public VOC toEntity() {
