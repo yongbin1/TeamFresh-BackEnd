@@ -8,12 +8,14 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class RegisterKeeperRequest {
 
-    private Long customerId;
+    private String customerId;
+    private String keeperId;
     private String name;
     private String number;
 
     public Keeper toEntity() {
         return Keeper.builder()
+                .keeperId(this.keeperId)
                 .name(this.name)
                 .number(this.number)
                 .build();

@@ -25,6 +25,7 @@ public class Customer extends BaseTime {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // 고유 아이디
 
+    private String customerId; // 고객사 아이디
     private String name; // 고객사명
     private String number; // 고객사 번호
 
@@ -36,7 +37,8 @@ public class Customer extends BaseTime {
     }
 
     @Builder
-    public Customer(String name, String number) {
+    public Customer(String customerId, String name, String number) {
+        this.customerId = customerId;
         this.name = name;
         this.number = number;
         this.keeperList = new ArrayList<>();

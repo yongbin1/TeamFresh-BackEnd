@@ -14,8 +14,8 @@ public class KeeperFacade {
     private final KeeperRepository keeperRepository;
 
     @Transactional(readOnly = true)
-    public Keeper getKeeper(Long id) {
-        return keeperRepository.findById(id)
+    public Keeper getKeeper(String id) {
+        return keeperRepository.findByKeeperId(id)
                 .orElseThrow(() -> KeeperNotFoundException.EXCEPTION);
     }
 

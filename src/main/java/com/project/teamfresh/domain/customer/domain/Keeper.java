@@ -23,6 +23,7 @@ public class Keeper extends BaseTime {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // 고유 아이디
 
+    private String keeperId; // 담당자 아이디
     private String name; // 담당자명
     private String number; // 담당자 번호
 
@@ -34,7 +35,8 @@ public class Keeper extends BaseTime {
     }
 
     @Builder
-    public Keeper(String name, String number) {
+    public Keeper(String keeperId, String name, String number) {
+        this.keeperId = keeperId;
         this.name = name;
         this.number = number;
     }

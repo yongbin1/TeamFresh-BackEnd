@@ -8,11 +8,13 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class RegisterCustomerRequest {
 
+    private String customerId;
     private String name;
     private String number;
 
     public Customer toEntity() {
         return Customer.builder()
+                .customerId(this.customerId)
                 .name(this.name)
                 .number(this.number)
                 .build();

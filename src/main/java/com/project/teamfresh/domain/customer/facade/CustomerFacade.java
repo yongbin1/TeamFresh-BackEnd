@@ -14,8 +14,8 @@ public class CustomerFacade {
     private final CustomerRepository customerRepository;
 
     @Transactional(readOnly = true)
-    public Customer getCustomer(Long id) {
-        return customerRepository.findById(id)
+    public Customer getCustomer(String id) {
+        return customerRepository.findByCustomerId(id)
                 .orElseThrow(() -> CustomerNotFoundException.EXCEPTION);
     }
 
