@@ -1,5 +1,6 @@
 package com.project.teamfresh.domain.customer.domain;
 
+import com.project.teamfresh.global.entity.BaseTime;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -16,7 +17,7 @@ import java.util.List;
 @Entity
 @Getter @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "tb_customer")
-public class Customer {
+public class Customer extends BaseTime {
 
     @Id
     private Long id; // 고유 아이디

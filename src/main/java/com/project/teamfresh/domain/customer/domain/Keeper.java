@@ -1,5 +1,6 @@
 package com.project.teamfresh.domain.customer.domain;
 
+import com.project.teamfresh.global.entity.BaseTime;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -16,7 +17,7 @@ import javax.persistence.Table;
 @Entity
 @Getter @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "tb_keeper")
-public class Keeper {
+public class Keeper extends BaseTime {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

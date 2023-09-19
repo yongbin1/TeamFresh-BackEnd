@@ -2,6 +2,7 @@ package com.project.teamfresh.domain.voc.domain;
 
 import com.project.teamfresh.domain.compensation.domain.Compensation;
 import com.project.teamfresh.domain.voc.domain.enums.ImputationParty;
+import com.project.teamfresh.global.entity.BaseTime;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -20,7 +21,7 @@ import javax.persistence.Table;
 @Entity
 @Getter @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "tb_voc")
-public class VOC {
+public class VOC extends BaseTime {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

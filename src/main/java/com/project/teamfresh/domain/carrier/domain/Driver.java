@@ -1,6 +1,7 @@
 package com.project.teamfresh.domain.carrier.domain;
 
 import com.project.teamfresh.domain.penalty.domain.Penalty;
+import com.project.teamfresh.global.entity.BaseTime;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -21,7 +22,7 @@ import java.util.List;
 @Entity
 @Getter @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "tb_driver")
-public class Driver {
+public class Driver extends BaseTime {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -2,6 +2,7 @@ package com.project.teamfresh.domain.penalty.domain;
 
 import com.project.teamfresh.domain.carrier.domain.Driver;
 import com.project.teamfresh.domain.compensation.domain.Compensation;
+import com.project.teamfresh.global.entity.BaseTime;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -19,7 +20,7 @@ import javax.persistence.Table;
 @Entity
 @Getter @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "tb_penalty")
-public class Penalty {
+public class Penalty extends BaseTime {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,5 +1,6 @@
 package com.project.teamfresh.domain.carrier.domain;
 
+import com.project.teamfresh.global.entity.BaseTime;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -18,7 +19,7 @@ import java.util.List;
 @Entity
 @Getter @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "tb_carrier")
-public class Carrier {
+public class Carrier extends BaseTime {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
